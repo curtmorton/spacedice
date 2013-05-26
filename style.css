@@ -2,7 +2,7 @@ body
 {
 	font-family: 'Titillium Web', sans-serif;
 	background: #2e2e51 url('bg.gif') top repeat-x;
-	padding:100px;
+
 }
 #logo
 {
@@ -12,7 +12,7 @@ body
 {
 	width:220px;
 	height:150px;
-	margin:auto;
+	margin:100px auto;
 	background: #fff;
 	border-radius: 5px;
 	padding:50px;
@@ -46,7 +46,9 @@ body
 
 #player-wrapper
 {
-	min-height:400px;
+	width:1076px;
+	min-height: 400px;
+	margin:auto;
 }
 
 .player
@@ -54,7 +56,7 @@ body
 	width:203px;
 	height:260px;
 	border: 3px #FFE87C solid;
-	margin:0 10px 20px 10px;
+	margin:100px 10px 20px 10px;
 	float:left;
 	padding:20px;
 	background:#fff;
@@ -98,10 +100,6 @@ a.sdBtn
 	background:#ec7063;
 }
 
-i
-{
-	margin:auto;
-}
 
 #supernova-button
 {

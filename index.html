@@ -9,16 +9,16 @@
 	<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class='all-container'>
-		<div id="player-wrapper">
-			<div id = "setup-wrapper">
-				<h1 id="logo"><img src="logo.png"></h1>
-				<h3>How many players?</h3>
-					<input type="text" id="player-count" maxlength="2"/>
-					<a href="javascript:void(0);" class="setupBtn" id="setup">Go!</a>
-				</div>
-			</div>
+
+	<div id="player-wrapper">
+		<div id = "setup-wrapper">
+			<h1 id="logo"><img src="logo.png"></h1>
+			<h3>How many players?</h3>
+			<input type="text" id="player-count" maxlength="2"/>
+			<a href="javascript:void(0);" class="setupBtn" id="setup">Go!</a>
+		</div>
 	</div>
+
 
 	<div id="supernova-ribbon" style="display:none;"></div>
 	<div href="javascript:void(0);" id="supernova-button" class="box" style="display:none;">
@@ -42,6 +42,8 @@
 		postLoadSettings: {
 			addButton: ".player-add",
 			removeButton: ".player-remove",
+			playerName: "#player-name",
+			editedName: ".edited-name"
 		},
 
 		init: function(){
@@ -57,6 +59,7 @@
 				
 				s.setupWrapper.fadeOut("fast", function()
 				{
+					s.setupWrapper.remove();
 					ScoreModule.generatePlayerCards(count);
 				});
 			});
@@ -73,8 +76,38 @@
 
 			s.superNovaButton.click(function(){
 					ScoreModule.superNova();
-				});
-			
+			});
+
+			$(document).on("click", ps.playerName, function()
+			{
+				var currentName = $(this).html(); // notice "this" instead of a specific #myDiv
+    			var editableText = $("<textarea class='edited-name'/>");
+
+    			editableText.val(currentName);
+			    $(this).replaceWith(editableText);
+			    editableText.focus();
+
+			});
+
+			$(document).on("click", ps.playerName, function()
+			{
+				var currentName = $(this).html(); // notice "this" instead of a specific #myDiv
+    			var editableText = $("<textarea />");
+
+    			editableText.val(currentName);
+			    $(this).replaceWith(editableText);
+			    editableText.focus();
+			});
+
+			 $(document).on("blur",ps.editedName, function(){
+			    	 var html = $(this).val();
+				    // create a dynamic div
+				    var viewableText = $("<h2>");
+				    // set it's html 
+				    viewableText.html(html);
+				    // replace out the textarea
+				    $(this).replaceWith(viewableText);
+			    });
 		},
 
 		addPlanet: function(elem){
@@ -120,7 +153,7 @@
 			if(playerCount > 0){
 
 				for (var i = 0; i < playerCount; i++) {
-					s.playerWrapper.append("<div class='player'><h1>PLAYER " + (i + 1) + "</h1><div class='player-score'>0</div><a href='javascript:void(0);' class='sdBtn add player-add'><i class='icon-plus icon-white'></i></a><a href='javascript:void(0);' class='sdBtn remove player-remove'><i class='icon-minus icon-white'></i></a></div>");
+					s.playerWrapper.append("<div class='player'><h1 id='player-name'>PLAYER " + (i + 1) + "</h1><div class='player-score'>0</div><a href='javascript:void(0);' class='sdBtn add player-add'><i class='icon-plus icon-white'></i></a><a href='javascript:void(0);' class='sdBtn remove player-remove'><i class='icon-minus icon-white'></i></a></div>");
 				};
 				
 				s.superNovaButton.fadeIn("fast");
