@@ -1,4 +1,4 @@
 spacedice
 =========
 
-#Score cards for the board game space dice. 
+##Score cards for the board game space dice. 
