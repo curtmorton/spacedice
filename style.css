@@ -2,12 +2,13 @@ body
 {
 	font-family: 'Titillium Web', sans-serif;
 	background: #2e2e51 url('bg.gif') top repeat-x;
-
 }
+
 #logo
 {
 	margin:-20px 0 0 0;
 }
+
 #setup-wrapper
 {
 	width:220px;
@@ -35,6 +36,13 @@ body
 	width:auto;
 }
 
+#h-div
+{
+	width:100%;
+	height:50px;
+	float:left;
+}
+
 .setupBtn
 {
 	width:90px !important;
@@ -46,19 +54,19 @@ body
 
 #player-wrapper
 {
-	width:1076px;
+	width:970px;
 	min-height: 400px;
 	margin:auto;
 }
 
 .player
 {
-	width:203px;
+	/* width:203px; */
 	height:260px;
 	border: 3px #FFE87C solid;
-	margin:100px 10px 20px 10px;
+	margin:30px 10px 20px 10px;
 	float:left;
-	padding:20px;
+	padding:8px;
 	background:#fff;
 	border-radius: 5px;
 }
@@ -88,6 +96,14 @@ body
 a.sdBtn
 {
 	text-decoration: none;
+}
+
+.sdBtn
+{
+	height:57px;
+	text-align: center;
+	font-size:100px !important;
+	padding-top:25px;
 }
 
 .sdBtn.add
@@ -126,7 +142,7 @@ a:hover
 {
 	width:100%;
 	height:80px;
-	margin:30px 0 0 0;
+	margin:80px 0 0 0;
 	background:#ec7063;
 }
 
