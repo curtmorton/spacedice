@@ -1,4 +1,4 @@
-spacedice
+Spacedice
 =========
 
 The score board accommodates as many players as you need (although some scrolling will be required if you play with more than 4). The image below shows the player count screen, where you input the amount of players for your game.
